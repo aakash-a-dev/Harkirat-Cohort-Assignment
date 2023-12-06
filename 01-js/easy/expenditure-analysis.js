@@ -6,7 +6,29 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
-  return [];
+  const categoryMap = {};
+
+  // Iterate through each transaction
+  transactions.forEach(transaction => {
+    const { category, price } = transaction;
+
+    // If category is not in the map, add it with the current price
+    if (!categoryMap[category]) {
+      categoryMap[category] = price;
+    } else {
+      // If category is already in the map, add the current price to the existing total
+      categoryMap[category] += price;
+    }
+  });
+
+  // Convert the categoryMap to the desired output format
+  const result = Object.keys(categoryMap).map(category => ({
+    category,
+    totalSpent: categoryMap[category]
+  }));
+
+  return result;
+
 }
 
 module.exports = calculateTotalSpentByCategory;
