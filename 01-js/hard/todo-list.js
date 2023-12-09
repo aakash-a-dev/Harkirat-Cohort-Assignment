@@ -11,6 +11,46 @@
 */
 
 class Todo {
+  constructor() {
+    this.todos = [];
+}
+
+// Adds todo to the list of todos
+add(todo) {
+    this.todos.push(todo);
+}
+
+// Removes todo from the list of todos based on the index
+remove(indexOfTodo) {
+    if (indexOfTodo >= 0 && indexOfTodo < this.todos.length) {
+        this.todos.splice(indexOfTodo, 1);
+    }
+}
+
+// Updates todo at the given index
+update(index, updatedTodo) {
+    if (index >= 0 && index < this.todos.length) {
+        this.todos[index] = updatedTodo;
+    }
+}
+
+// Returns all todos
+getAll() {
+    return this.todos;
+}
+
+// Returns todo at the given index
+get(indexOfTodo) {
+    if (indexOfTodo >= 0 && indexOfTodo < this.todos.length) {
+        return this.todos[indexOfTodo];
+    }
+    return null;
+}
+
+// Deletes all todos
+clear() {
+    this.todos = [];
+}
 
 }
 
