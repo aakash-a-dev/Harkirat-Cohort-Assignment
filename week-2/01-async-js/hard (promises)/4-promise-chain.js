@@ -6,19 +6,45 @@
  */
 
 function wait1(t) {
-
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve();
+        }, t)
+    })
 }
 
 function wait2(t) {
-
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve();
+        }, t)
+    })
 }
 
 function wait3(t) {
-
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve();
+        }, t)
+    })
 }
 
 function calculateTime(t1, t2, t3) {
+    const start = Date.now();
 
+    // Use Promise.all to wait for all promises to resolve
+    
+
+    // Use promise chaining to sequentially call the wait functions
+    return wait1(t1)
+        .then(() => wait2(t2))
+        .then(() => wait3(t3))
+        .then(() => {
+            // Calculate the total time in milliseconds
+            const end = Date.now();
+            const totalTime = end - start;
+            return totalTime;
+        });
 }
 
 module.exports = calculateTime;
