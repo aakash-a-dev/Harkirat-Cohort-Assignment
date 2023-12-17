@@ -19,6 +19,7 @@ function mathMethods(value) {
   let minValue = Math.min(5, 10, 15);
   console.log("After min():", minValue);
 
+  // Power of two
   let powerOfTwo = Math.pow(value, 2);
   console.log("After pow():", powerOfTwo);
 
