@@ -26,7 +26,7 @@ function signJwt(username, password) {
  *                    using the secret key.
  */
 function verifyJwt(token) {
-    // Your code here
+    
 }
 
 /**
