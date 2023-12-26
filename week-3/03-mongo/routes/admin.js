@@ -5,6 +5,9 @@ const router = Router();
 // Admin Routes
 app.post('/signup', (req, res) => {
     // Implement admin signup logic
+    const username = req.body.username;
+    const password = req.body.password;
+    
 });
 
 app.post('/courses', adminMiddleware, (req, res) => {
